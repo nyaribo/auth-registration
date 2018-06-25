@@ -20,14 +20,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home','HomeController@create');
 Route::post('/home','HomeController@store');
+Route::post('/welcome','HomeController@show');//shows fees paid from db
 
 
-Route::post('/home',function(){
-    return view('093905.fees.welcome');
-});
+
 
 Route::any('/search','HomeController@search');
